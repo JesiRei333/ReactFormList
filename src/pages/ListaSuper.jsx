@@ -65,7 +65,7 @@ export default function ListaSuper() {
       </form>
 
       {errors.lista && (
-        <p className=" flex justify-center items-center text-xs text-slate-300 hover:text-violet-700">
+        <p className=" flex justify-center items-center text-xs text-slate-950 hover:text-violet-700">
           {"⚠ "} {errors.lista.message}
         </p>
       )}
