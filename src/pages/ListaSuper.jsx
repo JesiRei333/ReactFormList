@@ -27,7 +27,7 @@ export default function ListaSuper() {
 
   return (
     <main
-      className="p-5 min-h-screen bg-slate-900 text-slate-300 bg-contain
+      className="p-10 min-h-screen bg-slate-900 text-slate-300 bg-contain
     bg-[url('https://wallpapers.com/images/hd/cinnamoroll-desktop-bhhl12rk370ivdwb.jpg')]"
     >
       <form
@@ -37,7 +37,7 @@ export default function ListaSuper() {
       >
         <input
           className={clsx(
-            "max-w-sm w-full p-2 rounded text-slate-800 hover:shadow-lg hover:shadow-cyan-500",
+            "max-w-sm w-full p-2 rounded text-slate-800 hover:shadow-lg hover:shadow-cyan-500 font-semibold ",
             { "0 shadow-lg sha shadow-teal-500": errors.user }
           )}
           type="text"
@@ -47,11 +47,11 @@ export default function ListaSuper() {
           {...register("lista", {
             minLength: {
               value: 3,
-              message: "Add una tarea de al menos 3 caracteres",
+              message: "Add una tarea de al menos 3 caracteres ♥",
             },
             maxLength: {
               value: 25,
-              message: "Add una tarea de máximo 25 caracteres",
+              message: "Add una tarea de máximo 25 caracteres ♥",
             },
           })}
         />
@@ -65,7 +65,7 @@ export default function ListaSuper() {
       </form>
 
       {errors.lista && (
-        <p className=" flex justify-center items-center text-xs text-slate-950 hover:text-violet-700">
+        <p className=" flex justify-center items-center text-xs  p-3 text-slate-950 hover:text-violet-700 font-semibold ">
           {"⚠ "} {errors.lista.message}
         </p>
       )}
@@ -75,24 +75,23 @@ export default function ListaSuper() {
           return (
             <div
               key={`item-${index}`}
-              className="max-w-sm w-full  flex justify-center items-center gap-2 rounded-xl  bg-cyan-300/30 text-slate-950 hover:shadow-lg hover:shadow-cyan-500 "
+              className=" w-full  flex justify-center items-center gap-2 rounded-xl min-w-[300px] max-w-[465px] bg-cyan-300/30 text-slate-950 hover:shadow-lg hover:shadow-cyan-500 "
             >
-              <p className=" max-w-sm w-full">
-                {" "}
-                {" •♥• "}
+              <p className=" max-w-sm w-full flex font-semibold">
+                <img
+                  className="max-w-[20px]"
+                  src="https://cdn-icons-png.flaticon.com/512/1721/1721570.png"
+                  alt="!"
+                />
+                {"  "}
                 {item}{" "}
               </p>
 
               <button
                 onClick={removeItem(index)}
-                className="bg-indigo-400 text-slate-900 rounded-r-xl p-2 hover:bg-indigo-400/50 hover:text-white font-semibold flex hover:shadow-lg hover:shadow-cyan-500 "
+                className="bg-indigo-400 text-slate-900 rounded-r-xl p-2 hover:bg-indigo-400/50 hover:text-white font-semibold flex hover:shadow-lg hover:shadow-cyan-500 pr-5 pl-5 align-middle text-center"
               >
                 Done{" "}
-                <img
-                  className="max-w-[20px]"
-                  src="https://cdn-icons-png.flaticon.com/512/1721/1721570.png"
-                  alt="."
-                />
               </button>
             </div>
           );
