@@ -50,8 +50,8 @@ export default function ListaSuper() {
               message: "Add una tarea de al menos 3 caracteres",
             },
             maxLength: {
-              value: 30,
-              message: "Add una tarea de máximo 30 caracteres",
+              value: 20,
+              message: "Add una tarea de máximo 20 caracteres",
             },
           })}
         />
