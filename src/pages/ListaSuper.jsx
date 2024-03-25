@@ -8,12 +8,14 @@ export default function ListaSuper() {
   const {
     handleSubmit,
     register,
+    reset,
     formState: { errors },
   } = useForm();
 
   async function onSubmit(data) {
     if (data.lista.trim().length > 0) {
       setTodos([data.lista.trim(), ...todos]);
+      reset();
     }
   }
   function removeItem(index) {
@@ -25,7 +27,7 @@ export default function ListaSuper() {
 
   return (
     <main
-      className="p-5 min-h-screen bg-slate-900 text-slate-300
+      className="p-5 min-h-screen bg-slate-900 text-slate-300 bg-contain
     bg-[url('https://wallpapers.com/images/hd/cinnamoroll-desktop-bhhl12rk370ivdwb.jpg')]"
     >
       <form
